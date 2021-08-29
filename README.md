@@ -26,4 +26,6 @@ ProtoOpcodes: <array>
         CppMapPath - C++ path[es] to create global map enum
         CsClassPath - C# path[es] to create ClassMap
         CsEnumPath - C# path[es] to create Enum
+        
+Write comment '@skip' before message, that skip it opcode creator
 ```

@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E45A31F6-7A47-4697-A24D-0137995AE8D1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>OpcodeGenerator</RootNamespace>
+    <AssemblyName>opgen</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Core.cs" />
+    <Compile Include="Actions\ProtoOpcodes.cs" />
+    <Compile Include="CodeGenerator\FileParser.cs" />
+    <Compile Include="CodeGenerator\GlobalSuppressions.cs" />
+    <Compile Include="CodeGenerator\LocalParser.cs" />
+    <Compile Include="CodeGenerator\ProtocolParser\ProtocolParser.cs" />
+    <Compile Include="CodeGenerator\ProtocolParser\ProtocolParserExceptions.cs" />
+    <Compile Include="CodeGenerator\ProtocolParser\ProtocolParserFixed.cs" />
+    <Compile Include="CodeGenerator\ProtocolParser\ProtocolParserKey.cs" />
+    <Compile Include="CodeGenerator\ProtocolParser\ProtocolParserMemory.cs" />
+    <Compile Include="CodeGenerator\ProtocolParser\ProtocolParserMemory4.cs" />
+    <Compile Include="CodeGenerator\ProtocolParser\ProtocolParserVarInt.cs" />
+    <Compile Include="CodeGenerator\ProtoParser.cs" />
+    <Compile Include="CodeGenerator\Proto\Field.cs" />
+    <Compile Include="CodeGenerator\Proto\FieldRule.cs" />
+    <Compile Include="CodeGenerator\Proto\IComment.cs" />
+    <Compile Include="CodeGenerator\Proto\ProtoBuiltin.cs" />
+    <Compile Include="CodeGenerator\Proto\ProtoCollection.cs" />
+    <Compile Include="CodeGenerator\Proto\ProtoEnum.cs" />
+    <Compile Include="CodeGenerator\Proto\ProtoFormatException.cs" />
+    <Compile Include="CodeGenerator\Proto\ProtoMessage.cs" />
+    <Compile Include="CodeGenerator\Proto\ProtoType.cs" />
+    <Compile Include="CodeGenerator\Proto\Search.cs" />
+    <Compile Include="CodeGenerator\Proto\Wire.cs" />
+    <Compile Include="CodeGenerator\SourcePath.cs" />
+    <Compile Include="CodeGenerator\TokenReader.cs" />
+    <Compile Include="Google.Protobuf\ByteArray.cs" />
+    <Compile Include="Google.Protobuf\ByteString.cs" />
+    <Compile Include="Google.Protobuf\CodedInputStream.cs" />
+    <Compile Include="Google.Protobuf\CodedOutputStream.ComputeSize.cs" />
+    <Compile Include="Google.Protobuf\CodedOutputStream.cs" />
+    <Compile Include="Google.Protobuf\Collections\Lists.cs" />
+    <Compile Include="Google.Protobuf\Collections\MapField.cs" />
+    <Compile Include="Google.Protobuf\Collections\ProtobufEqualityComparers.cs" />
+    <Compile Include="Google.Protobuf\Collections\ReadOnlyDictionary.cs" />
+    <Compile Include="Google.Protobuf\Collections\RepeatedField.cs" />
+    <Compile Include="Google.Protobuf\Compatibility\MethodInfoExtensions.cs" />
+    <Compile Include="Google.Protobuf\Compatibility\PropertyInfoExtensions.cs" />
+    <Compile Include="Google.Protobuf\Compatibility\StreamExtensions.cs" />
+    <Compile Include="Google.Protobuf\Compatibility\TypeExtensions.cs" />
+    <Compile Include="Google.Protobuf\Extension.cs" />
+    <Compile Include="Google.Protobuf\ExtensionRegistry.cs" />
+    <Compile Include="Google.Protobuf\ExtensionSet.cs" />
+    <Compile Include="Google.Protobuf\ExtensionValue.cs" />
+    <Compile Include="Google.Protobuf\FieldCodec.cs" />
+    <Compile Include="Google.Protobuf\FieldMaskTree.cs" />
+    <Compile Include="Google.Protobuf\FrameworkPortability.cs" />
+    <Compile Include="Google.Protobuf\ICustomDiagnosticMessage.cs" />
+    <Compile Include="Google.Protobuf\IDeepCloneable.cs" />
+    <Compile Include="Google.Protobuf\IExtendableMessage.cs" />
+    <Compile Include="Google.Protobuf\IMessage.cs" />
+    <Compile Include="Google.Protobuf\InvalidJsonException.cs" />
+    <Compile Include="Google.Protobuf\InvalidProtocolBufferException.cs" />
+    <Compile Include="Google.Protobuf\JsonFormatter.cs" />
+    <Compile Include="Google.Protobuf\JsonParser.cs" />
+    <Compile Include="Google.Protobuf\JsonToken.cs" />
+    <Compile Include="Google.Protobuf\JsonTokenizer.cs" />
+    <Compile Include="Google.Protobuf\LimitedInputStream.cs" />
+    <Compile Include="Google.Protobuf\MessageExtensions.cs" />
+    <Compile Include="Google.Protobuf\MessageParser.cs" />
+    <Compile Include="Google.Protobuf\ObjectIntPair.cs" />
+    <Compile Include="Google.Protobuf\ProtoPreconditions.cs" />
+    <Compile Include="Google.Protobuf\Reflection\CustomOptions.cs" />
+    <Compile Include="Google.Protobuf\Reflection\Descriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\DescriptorBase.cs" />
+    <Compile Include="Google.Protobuf\Reflection\DescriptorDeclaration.cs" />
+    <Compile Include="Google.Protobuf\Reflection\DescriptorPool.cs" />
+    <Compile Include="Google.Protobuf\Reflection\DescriptorUtil.cs" />
+    <Compile Include="Google.Protobuf\Reflection\DescriptorValidationException.cs" />
+    <Compile Include="Google.Protobuf\Reflection\EnumDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\EnumValueDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\ExtensionAccessor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\ExtensionCollection.cs" />
+    <Compile Include="Google.Protobuf\Reflection\FieldAccessorBase.cs" />
+    <Compile Include="Google.Protobuf\Reflection\FieldDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\FieldType.cs" />
+    <Compile Include="Google.Protobuf\Reflection\FileDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\GeneratedClrTypeInfo.cs" />
+    <Compile Include="Google.Protobuf\Reflection\IDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\IFieldAccessor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\MapFieldAccessor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\MessageDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\MethodDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\OneofAccessor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\OneofDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\OriginalNameAttribute.cs" />
+    <Compile Include="Google.Protobuf\Reflection\PackageDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\ReflectionUtil.cs" />
+    <Compile Include="Google.Protobuf\Reflection\RepeatedFieldAccessor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\ServiceDescriptor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\SingleFieldAccessor.cs" />
+    <Compile Include="Google.Protobuf\Reflection\TypeRegistry.cs" />
+    <Compile Include="Google.Protobuf\UnknownField.cs" />
+    <Compile Include="Google.Protobuf\UnknownFieldSet.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\Any.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\AnyPartial.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\Api.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\Duration.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\DurationPartial.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\Empty.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\FieldMask.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\FieldMaskPartial.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\SourceContext.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\Struct.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\TimeExtensions.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\Timestamp.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\TimestampPartial.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\Type.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\ValuePartial.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\Wrappers.cs" />
+    <Compile Include="Google.Protobuf\WellKnownTypes\WrappersPartial.cs" />
+    <Compile Include="Google.Protobuf\WireFormat.cs" />
+    <Compile Include="Proto\Cpp\ClassRebuilder.cs" />
+    <Compile Include="Proto\Cpp\MetaEraser.cs" />
+    <Compile Include="Proto\Cpp\OpcodeMapper.cs" />
+    <Compile Include="LineBuilder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proto\Cs\OpcodeMapper.cs" />
+    <Compile Include="Proto\OpcodesProto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

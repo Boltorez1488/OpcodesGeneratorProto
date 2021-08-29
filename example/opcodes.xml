@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcodesData>
+  <Opcode Id="1">ClientPackets.DownloadPart</Opcode>
+  <Opcode Id="2">ClientProto.TestMsg</Opcode>
+  <Opcode Id="3">ClientProto.Message2</Opcode>
+</OpcodesData>

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ClientPackets;
+
+message DownloadPart {
+    int64 fileName = 1;
+}

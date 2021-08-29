@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Actions>
+    <!--Type of all opcodes for C++-->
+    <OpcodeType>unsigned long</OpcodeType>
+    <!--Type of all opcodes for C#-->
+    <OpcodeTypeCs>ulong</OpcodeTypeCs>
+    <ProtoOpcodes>
+        <!--Main db to save/load all opcodes everytime, don't rewrite this file-->
+        <Data>opcodes.xml</Data>
+        <!--Field name to place field into classes-->
+        <FieldName>Opcode</FieldName>
+        <!--Full name to mapper-->
+        <EnumName>Client.Opcodes</EnumName>
+        
+        <!--Path to proto file[s]-->
+        <Include>Proto\*.proto</Include>
+        <Include>Proto2\*.proto</Include>
+        
+        <!--C++ path[es] to *pb files that rebuild it-->
+        <CppPath>ProtocCpp</CppPath>
+        <!--C++ path[es] to create global map enum-->
+        <CppMapPath>ProtocCpp</CppMapPath>
+
+        <!--C# path[es] to create ClassMap-->
+        <CsClassPath>ProtocCs</CsClassPath>
+        <!--C# path[es] to create Enum-->
+        <CsEnumPath>ProtocCs</CsEnumPath>
+    </ProtoOpcodes>
+    <!--Path to erase all meta-info in C++ classes-->
+    <ProtoMetaEraser>ProtocCpp</ProtoMetaEraser>
+</Actions>

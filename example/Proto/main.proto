@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ClientProto;
+
+// Helper
+message TestMsg {
+    message AABB {
+        float x = 1;
+        float y = 2;
+        float z = 3;
+        float w = 4;
+    }
+    AABB desc = 1;
+}
+
+message Message2 {
+
+}
